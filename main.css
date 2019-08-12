@@ -69,6 +69,23 @@ h1 {
    text-decoration: underline;
    font-size: 50px
 }
+label{
+  font-size: 20px;
+  font-weight: bold;
+}
+label.Red{
+  background: rgba(255, 0, 0, 0.3);
+}
+label.Blue{
+  background: rgba(0, 0, 255, 0.3);
+}
+label.Green{
+  background: rgba(0, 255, 0, 0.3);
+}
+label.Yellow {
+  background: rgba(238, 255, 0, 0.3);
+}
+
 
 div.main{
     border: black;
@@ -78,8 +95,26 @@ div.main{
     margin-right:auto;
     box-shadow: 10px 10px 5px grey;
     border-radius: 5%;
+    align-content: center;
+    text-align: center;
 }
-
+input[type=checkbox]{
+  margin: 10px 20px;
+}
+input[type=submit]{
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  background: #4CAF50;
+  border: 2px solid #006b1b;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0px 1px 0px #13506D;
+  width: 50%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  }
 /* Create three unequal columns that floats next to each other */
 .column {
     float: left;
@@ -108,4 +143,18 @@ div.main{
   body {
       background:lightgrey;
       align-content: center;
+  }
+  .button {
+    background-color: gray; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    border-radius: 5px;
   }
