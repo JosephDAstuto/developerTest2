@@ -14,6 +14,9 @@ table, th, td
     margin-left:auto; 
     margin-right:auto;
 }
+td:nth-child(2) {
+  width: 250px;
+}
 td:first-child {
   border: solid 0px #DDD;
   height: 40px;

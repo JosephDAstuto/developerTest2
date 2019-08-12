@@ -36,19 +36,32 @@ $moviesArray=array();
 // print_r(firstColour($tCol, $colours));
 
 foreach ($colours as $colour) {
-    $url = file_get_contents("http://www.omdbapi.com/?apikey=b5f9ff72&type=movie&s=".$colour."&page=1");
-    //Below for testing multiple colours
-    // $url = file_get_contents("http://www.omdbapi.com/?apikey=b5f9ff72&type=movie&s=blue+red");
+    $link = "http://www.omdbapi.com/?apikey=b5f9ff72&type=movie&s=".$colour."&page=1";
+    //Below for testing multiple colours best outline for multple colours and showing the firstColour() funciton
+    //$link = "http://www.omdbapi.com/?apikey=b5f9ff72&type=movie&s=blue+green";
+    //$url = file_get_contents($link);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $link);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $url = curl_exec($ch);
+
     $json = json_decode($url, true);
 
-    foreach ($json['Search'] as $movies) {   
-        
-        $firstColour = firstColour(" ".$movies['Title'], $colours);
-        $movies += ['colours' => $firstColour];
-        
-        array_push($moviesArray, $movies );
-    };
+    // print_r($json);
 
+    if ($json['Response'] == "False"){
+        echo "Something went wrong in finding the movies: ".$json['Error'];
+    } else {
+
+        foreach ($json['Search'] as $movies) {   
+            
+            $firstColour = firstColour(" ".$movies['Title'], $colours);
+            $movies += ['colours' => $firstColour];
+            
+            array_push($moviesArray, $movies );
+        };
+    }
 }
 ?>
 
