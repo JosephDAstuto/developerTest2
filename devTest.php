@@ -5,17 +5,17 @@
 $colours = ['Blue', 'Red', 'Green', 'Yellow'];
 
 function firstColour($title, $colourArray) {
-    echo $title;
+    //echo $title;
     $lowCol = "";
     $lowPos = 50;
 
     foreach ($colourArray as $colour) {
         
-        $loc = strpos($title, $colour, 0);
+        $loc = stripos($title, $colour, 0);
         if ($loc == false) {
             //do nothing
         } else {
-            echo "'$colour' exists at '$loc' with previous pos $lowPos \n";
+            // echo "'$colour' exists at '$loc' with previous pos $lowPos \n";
             if ($loc < $lowPos){
                 $lowCol = $colour;
                 $lowPos = $loc;
@@ -30,11 +30,11 @@ function firstColour($title, $colourArray) {
 
 $moviesArray=array();
 
-$tCol = "Red White & Blue";
-print_r(firstColour($tCol, $colours));
+// $tCol = "Red White & Blue";
+// print_r(firstColour($tCol, $colours));
 
 foreach ($colours as $colour) {
-    $url = file_get_contents("http://www.omdbapi.com/?apikey=b5f9ff72&type=movie&s=".$colours[0]."&page=21");
+    $url = file_get_contents("http://www.omdbapi.com/?apikey=b5f9ff72&type=movie&s=".$colour."&page=1");
     // $url = file_get_contents("http://www.omdbapi.com/?apikey=b5f9ff72&type=movie&s=blue+red");
     $json = json_decode($url, true);
 
