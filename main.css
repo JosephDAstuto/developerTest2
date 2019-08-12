@@ -4,15 +4,22 @@ th, td, p, input {
 table, th, td 
 {
     vertical-align: middle;
-    
+    border-radius: 15;
     border: solid 1px #DDD;
     border-collapse: collapse;
     padding: 2px 3px;
     text-align: center;
+    margin-left:auto; 
+    margin-right:auto;
     /* background-color: aliceblue; */
+}
+td {
+  height: 40px;
 }
 th {
     font-weight:bold;
+    background: antiquewhite;
+    font-size: 200%
 }
 
 .table.border{
@@ -20,6 +27,21 @@ th {
     display: inline-block;
     border-radius: 5%;
     padding: 5%;
+}
+
+h1 {
+   text-align: center;
+   text-decoration: underline;
+}
+
+div.main{
+    border: black;
+    background: white;
+    width: 50%;
+    margin-left:auto; 
+    margin-right:auto;
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 5%;
 }
 
 /* Create three unequal columns that floats next to each other */
@@ -48,7 +70,7 @@ th {
   }
 
   body {
-      /* background: black; */
+      background:lightgrey;
       align-content: center;
   }
 
