@@ -50,10 +50,12 @@ foreach ($colours as $colour) {
 
     // print_r($json);
 
+    //if search is invalid let user know
     if ($json['Response'] == "False"){
         echo "Something went wrong in finding the movies: ".$json['Error'];
     } else {
 
+        //else for each result append the first colour and add to the movie array
         foreach ($json['Search'] as $movies) {   
             
             $firstColour = firstColour(" ".$movies['Title'], $colours);
@@ -87,6 +89,7 @@ foreach ($colours as $colour) {
             </tr>
             <?php
                 foreach ($moviesArray as $movie){
+                    //get the details of each movie inluding release date and runtime
                     $movieUrl = file_get_contents("http://www.omdbapi.com/?apikey=b5f9ff72&i=".$movie['imdbID']."&type=movie");
                     $movieJson = json_decode($movieUrl, true);
                     echo '<tr><td><span class="dot_'.$movie['colours'].'"></span></td> <td>'.$movie['Title'].'</td><td>'.$movieJson['Released'].'</td><td>'.$movieJson['Runtime'].'</td></tr>'; 
