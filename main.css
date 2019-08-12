@@ -1,0 +1,68 @@
+th, td, p, input {
+    font:14px Verdana;
+}
+table, th, td 
+{
+    vertical-align: middle;
+    
+    border: solid 1px #DDD;
+    border-collapse: collapse;
+    padding: 2px 3px;
+    text-align: center;
+    /* background-color: aliceblue; */
+}
+th {
+    font-weight:bold;
+}
+
+.table.border{
+    background-color: whitesmoke;
+    display: inline-block;
+    border-radius: 5%;
+    padding: 5%;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+  }
+  
+  /* Left and right column */
+  .column.side {
+    width: 25%;
+    align-content: center
+
+  }
+  
+  /* Middle column */
+  .column.middle {
+    
+    /* width: 75%; */
+    text-align: center;
+  }
+
+  header {
+      text-align: center;
+      padding: 20px;
+  }
+
+  body {
+      /* background: black; */
+      align-content: center;
+  }
+
+  .button {
+    background-color: gray; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    border-radius: 5px;
+  }
