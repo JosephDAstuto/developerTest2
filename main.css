@@ -1,20 +1,52 @@
 th, td, p, input {
     font:14px Verdana;
 }
+table {
+  padding-top: 10%;
+}
 table, th, td 
 {
     vertical-align: middle;
-    border-radius: 15;
     border: solid 1px #DDD;
     border-collapse: collapse;
     padding: 2px 3px;
     text-align: center;
     margin-left:auto; 
     margin-right:auto;
-    /* background-color: aliceblue; */
 }
-td {
+td:first-child {
+  border: solid 0px #DDD;
   height: 40px;
+  font-weight: bold;
+  border-bottom: none;
+}
+.dot_Red{
+  background-color: red;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot_Blue{
+  background-color: blue;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot_Yellow{
+  background-color: yellow;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot_Green{
+  background-color: green;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: inline-block;
 }
 th {
     font-weight:bold;
@@ -32,12 +64,13 @@ th {
 h1 {
    text-align: center;
    text-decoration: underline;
+   font-size: 50px
 }
 
 div.main{
     border: black;
     background: white;
-    width: 50%;
+    width: 900px;
     margin-left:auto; 
     margin-right:auto;
     box-shadow: 10px 10px 5px grey;

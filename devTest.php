@@ -7,20 +7,21 @@ $colours = ['Blue', 'Red', 'Green', 'Yellow'];
 function firstColour($title, $colourArray) {
 
     $lowCol = "";
-    $lowPos = 50;
+    $lowPos = 100;
 
     foreach ($colourArray as $colour) {
         
+        //returns false if not found
         $loc = stripos($title, $colour, 0);
         if ($loc == false) {
             //do nothing
         } else {
-
+            //check to see if the location of the colour checked is lower
+            //then the previous
             if ($loc < $lowPos){
                 $lowCol = $colour;
                 $lowPos = $loc;
             }
-
         }
     }
     return $lowCol;
@@ -75,7 +76,7 @@ foreach ($colours as $colour) {
                 foreach ($moviesArray as $movie){
                     $movieUrl = file_get_contents("http://www.omdbapi.com/?apikey=b5f9ff72&i=".$movie['imdbID']."&type=movie");
                     $movieJson = json_decode($movieUrl, true);
-                    echo '<tr><td bgcolor="'.$movie['colours'].'">'.$movie['colours'].'</td> <td>'.$movie['Title'].'</td><td>'.$movieJson['Released'].'</td><td>'.$movieJson['Runtime'].'</td></tr>'; 
+                    echo '<tr><td><span class="dot_'.$movie['colours'].'"></span></td> <td>'.$movie['Title'].'</td><td>'.$movieJson['Released'].'</td><td>'.$movieJson['Runtime'].'</td></tr>'; 
                 };
             ?>
         </table>`
